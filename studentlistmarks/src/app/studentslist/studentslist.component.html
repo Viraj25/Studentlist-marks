@@ -1,0 +1,32 @@
+<main class="container">
+    {{tableName}}
+    <div class="container-item">
+        <div class="item-heading"> more than 70
+        </div>
+        <div *ngFor="let student of students" class="list-Item">
+            <div *ngIf="student.mark >= 70"><span>{{student.name}}</span>
+                <input type="number" [(ngModel)]="student.mark">
+            </div>
+        </div>
+    </div>
+    <div class="container-item">
+        <div class="item-heading"> Less than 70 % more than 50</div>
+        <div *ngFor="let student of students" class="list-Item">
+            <div *ngIf="student.mark < 70 && student.mark>=50">
+                <span>{{student.name}}</span>
+                <input type="number" [(ngModel)]="student.mark">
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-item">
+        <div class="item-heading"> less than 50</div>
+        <div *ngFor="let student of students" class="list-Item">
+            <div *ngIf="student.mark<50">
+                {{student.name}} <input type="number" placeholder="student.mark" [(ngModel)]="student.mark">
+
+            </div>
+        </div>
+    </div>
+
+</main>
